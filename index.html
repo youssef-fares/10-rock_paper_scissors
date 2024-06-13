@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- OPEN BROWSER'S CONSOLE TO PLAY THIS GAME -->
+
+    <script type="text/javascript">
+      let options = ["rock", "paper", "scissors"];
+      let humanScore = 0;
+      let computerScore = 0;
+
+      playGame();
+
+      //**FUNCTIONS**//
+
+      function getComputerChoice() {
+        let computerChoice = Math.floor(Math.random() * 3);
+        return options[computerChoice];
+      }
+      //   console.log(getComputerChoice());
+
+      function getHumanChoice() {
+        let humanChoice = "";
+        do {
+          humanChoice = prompt(
+            "enter your choice ('rock', 'paper' or 'scissors')"
+          );
+        } while (
+          humanChoice !== options[0] &&
+          humanChoice !== options[1] &&
+          humanChoice !== options[2]
+        );
+
+        return humanChoice;
+      }
+
+      function playRound(humanChoice, computerChoice) {
+        switch (humanChoice) {
+          case "rock":
+            switch (computerChoice) {
+              case "rock":
+                console.log("Draw!");
+                break;
+              case "paper":
+                console.log(
+                  "You lose! " + computerChoice + " beats " + humanChoice
+                );
+                computerScore++;
+                break;
+              case "scissors":
+                console.log(
+                  "You win! " + humanChoice + " beats " + computerChoice
+                );
+                humanScore++;
+                break;
+              default:
+                console.log("error");
+            }
+            break;
+
+          case "paper":
+            switch (computerChoice) {
+              case "paper":
+                console.log("Draw!");
+                break;
+              case "scissors":
+                console.log(
+                  "You lose! " + computerChoice + " beats " + humanChoice
+                );
+                computerScore++;
+                break;
+              case "rock":
+                console.log(
+                  "You win! " + humanChoice + " beats " + computerChoice
+                );
+                humanScore++;
+                break;
+              default:
+                console.log("error");
+            }
+            break;
+
+          case "scissors":
+            switch (computerChoice) {
+              case "scissors":
+                console.log("Draw!");
+                break;
+              case "rock":
+                console.log(
+                  "You lose! " + computerChoice + " beats " + humanChoice
+                );
+                computerScore++;
+                break;
+              case "paper":
+                console.log(
+                  "You win! " + humanChoice + " beats " + computerChoice
+                );
+                humanScore++;
+                break;
+              default:
+                console.log("error");
+            }
+            break;
+          default:
+            console.log("error");
+        }
+      }
+
+      function playGame() {
+        for (let i = 0; i < 5; i++) {
+          let round = parseInt(i) + 1;
+          console.log("Round " + round + ": ");
+          const humanSelection = getHumanChoice();
+          const computerSelection = getComputerChoice();
+
+          playRound(humanSelection, computerSelection);
+          console.log(
+            "Score Round " +
+              round +
+              ": Player " +
+              humanScore +
+              " - " +
+              computerScore +
+              " Computer"
+          );
+        }
+
+        if (humanScore > computerScore) {
+          console.log("you win!");
+        } else if (humanScore < computerScore) {
+          console.log("You lose!");
+        } else {
+          console.log("Draw!");
+        }
+      }
+
+      //   console.log(playRound);
+      //   console.log(getHumanChoice());
+    </script>
+  </body>
+</html>
