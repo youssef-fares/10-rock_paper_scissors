@@ -3,12 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rock, Paper, Scissors</title>
+    <link rel="icon" type="image/png" href="./rock.png">
+    <link rel="stylesheet" href="./style.css"/>
+    <link
+    href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+    rel="stylesheet"
+  />
   </head>
 
   <body>
     <!-- OPEN BROWSER'S CONSOLE TO PLAY THIS GAME -->
+    <div class="grid-container">
+      <div class="title">
+        <h1>Rock, Paper, Scissors</h1>
+        <h2>Get 5pts to win!</h2>
+      </div>
 
+      <div class="round">
+        <h2 class="round">Click here to start</h2>
+      </div>
+
+      <div class="you">
+        <p>You</p>
+      </div>
+
+      <div class="alex">
+        <img class="alex" src="./alex.png" alt="Alex Kidd 8bit" >
+      </div>
+
+      <div type="button" class="choice" id="rock">
+        <button id="rock"value="rock"></button>
+      </div>
+
+      <div type="button" class="choice" id="paper">
+        <button id="paper" value="paper"></button>
+      </div>
+
+      <div type="button" class="choice" id="scissors" >
+        <button id="scissors" value="scissors"></button>
+      </div>
+
+      <div class="comp">
+        <p>Boss</p>
+      </div>
+
+      <div class="boss">
+        <img class="boss" src="./computerBoss.png" alt="Alex Kidd 8bit" height="200px">
+      </div>
+
+      <div class="comp-rock">
+        <img src="./rock.png" alt="" height="100px">
+      </div>
+
+      <div class="comp-paper">
+        <img src="./paper.png" alt="" height="100px">
+      </div>
+
+      <div class="comp-scissors">
+        <img src="./scissors.png" alt="" height="100">
+      </div>
+
+
+      <div class="score">
+      0  :  0
+      </div>
+
+      <div class="final">
+
+      </div>
+
+
+
+
+    </div>
+  
+
+
+      </div>
+    <!--  
     <script type="text/javascript">
       let options = ["rock", "paper", "scissors"];
       let humanScore = 0;
@@ -142,5 +215,8 @@
       //   console.log(playRound);
       //   console.log(getHumanChoice());
     </script>
+    -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="./index.js" charset="utf-8"></script>
   </body>
 </html>
